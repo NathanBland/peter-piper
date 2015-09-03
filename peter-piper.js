@@ -1,10 +1,10 @@
 /**
  * peter-piper.js
  * ==============
- * 
+ *
  * Count the number of times a capital `P` or lowercase `p` shows up in the
  * Peter Piper tongue twister.
- * 
+ *
  * Hint
  * ----
  * Read the 'References' section in the README, which contains links to some
@@ -19,7 +19,14 @@ peterpiper += "Where's the peck of pickled peppers Peter Piper picked?"
 
 var counter = 0;
 
-// TODO: Count the number of times an uppercase P or lowercase p character
-//       occurs in the `peterpiper` string.
-
+/*
+var p = peterpiper.match(/p/i) //is this cheating?
+counter = p.length-1 //Caause I feel like this is cheating.
+/**/
+function countOccurrences(string, char){ //oh and that function you asked for.
+  var regexp = new RegExp(char, "gi");
+  var r = string.match(regexp)
+  return r.length
+}/**/
+counter = countOccurrences(peterpiper, 'p')
 console.log("There are " + counter + " P's in Peter Piper.");
